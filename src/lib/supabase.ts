@@ -1,9 +1,12 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase =
+  supabaseUrl && supabaseAnonKey
+    ? createClient(supabaseUrl, supabaseAnonKey)
+    : null;
 
 // Contact form submission function
 export async function submitContactForm(data: {
@@ -17,6 +20,15 @@ export async function submitContactForm(data: {
   inquiryType: string;
 }) {
   try {
+    if (!supabase) {
+      console.log("Contact form data:", data);
+      return {
+        success: true,
+        data: null,
+        message: "Supabase not configured - form data logged to console",
+      };
+    }
+
     const { data: result, error } = await supabase
       .from("contact_submissions")
       .insert([
@@ -47,6 +59,15 @@ export async function submitContactForm(data: {
 // Newsletter subscription function
 export async function subscribeNewsletter(email: string) {
   try {
+    if (!supabase) {
+      console.log("Newsletter subscription:", email);
+      return {
+        success: true,
+        data: null,
+        message: "Supabase not configured - email logged to console",
+      };
+    }
+
     const { data, error } = await supabase
       .from("newsletter_subscriptions")
       .insert([
