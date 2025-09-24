@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Menu,
   X,
@@ -99,14 +100,15 @@ const Header = () => {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-2"
             >
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Building2 className="w-6 h-6 text-white" />
-              </div>
-              <span
-                className={`text-2xl font-bold ${scrolled ? "text-gray-900" : "text-white"}`}
-              >
-                OvyeGroup
-              </span>
+              <Image
+                src={
+                  scrolled ? "/images/blackovglogo.png" : "/images/ovglogo.png"
+                }
+                alt="OvyeGroup Logo"
+                width={200}
+                height={200}
+                className="scroll"
+              />
             </motion.div>
           </Link>
 
