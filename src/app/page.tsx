@@ -27,30 +27,30 @@ export default function Home() {
 
   const businessSectors = [
     {
-      title: "Energy & Oil",
+      title: "Agriculture",
       description:
-        "Leading the energy transformation across Africa with sustainable and innovative solutions.",
+        "Africa has vast arable land and favorable climatic conditions for agriculture. Investing in modern farming techniques, irrigation systems, agribusiness, and value-added processing can boost agricultural productivity, food security, and export opportunities.",
       image: "/images/energy.png",
       link: "/business/energy",
     },
     {
-      title: "Manufacturing",
+      title: "Finance",
       description:
-        "World-class manufacturing facilities producing quality goods for local and international markets.",
+        "We are addressing Africa's infrastructure deficit by mobilizing global capital and allocating it to sectors that will power Africa to prosperity.",
       image: "/images/manufacturing.png",
       link: "/business/manufacturing",
     },
     {
-      title: "Technology",
+      title: "Health",
       description:
-        "Driving digital transformation and innovation across various industries.",
+        "To ensure the well-being and productivity of our populace, it is imperative for Africa to prioritize the establishment of dependable and accessible healthcare services. By investing in top-tier health facilities, cutting-edge equipment, and quality services.",
       image: "/images/technology.png",
       link: "/business/technology",
     },
     {
-      title: "Real Estate",
+      title: "Mining",
       description:
-        "Developing modern commercial and residential properties that shape skylines.",
+        "We are addressing Africa's infrastructure deficit by mobilizing global capital and allocating it to sectors that will power Africa to prosperity.",
       image: "/images/realestate.png",
       link: "/business/real-estate",
     },
@@ -266,7 +266,9 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {sector.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">{sector.description}</p>
+                  <p className="text-gray-600 mb-4 h-24 overflow-hidden text-ellipsis line-clamp-4">
+                    {sector.description}
+                  </p>
                   <Link
                     href={sector.link}
                     className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors gap-2 group-hover:gap-3 group-hover:transition-all"
