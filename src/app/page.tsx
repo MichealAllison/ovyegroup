@@ -219,8 +219,8 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 p-8 text-white">
-                <div className="h-full flex flex-col justify-center">
+              <div className="aspect-square rounded-2xl inset-0 bg-[url('/images/visionimg.png')] bg-cover bg-center p-8 text-white">
+                <div className="h-full w-full flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-6 rounded-2xl">
                   <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
                   <p className="text-blue-100 text-lg leading-relaxed">
                     To be Africa&apos;s most respected conglomerate, creating
