@@ -30,28 +30,28 @@ export default function Home() {
       title: "Energy & Oil",
       description:
         "Leading the energy transformation across Africa with sustainable and innovative solutions.",
-      image: "/api/placeholder/400/300",
+      image: "/images/energy.png",
       link: "/business/energy",
     },
     {
       title: "Manufacturing",
       description:
         "World-class manufacturing facilities producing quality goods for local and international markets.",
-      image: "/api/placeholder/400/300",
+      image: "/images/manufacturing.png",
       link: "/business/manufacturing",
     },
     {
       title: "Technology",
       description:
         "Driving digital transformation and innovation across various industries.",
-      image: "/api/placeholder/400/300",
+      image: "/images/technology.png",
       link: "/business/technology",
     },
     {
       title: "Real Estate",
       description:
         "Developing modern commercial and residential properties that shape skylines.",
-      image: "/api/placeholder/400/300",
+      image: "/images/realestate.png",
       link: "/business/real-estate",
     },
   ];
@@ -256,7 +256,12 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
               >
-                <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700"></div>
+                <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700">
+                  <div
+                    className="h-full w-full bg-cover bg-center"
+                    style={{ backgroundImage: `url(${sector.image})` }}
+                  ></div>
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {sector.title}
