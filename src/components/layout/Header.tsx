@@ -37,23 +37,10 @@ const Header = () => {
     {
       label: "About Us",
       href: "/about",
-      dropdown: [
-        { label: "Our Story", href: "/about/story" },
-        { label: "Leadership", href: "/about/leadership" },
-        { label: "Mission & Vision", href: "/about/mission" },
-        { label: "Corporate Governance", href: "/about/governance" },
-      ],
     },
     {
       label: "Our Business",
       href: "/business",
-      dropdown: [
-        { label: "Energy & Oil", href: "/business/energy" },
-        { label: "Manufacturing", href: "/business/manufacturing" },
-        { label: "Technology", href: "/business/technology" },
-        { label: "Real Estate", href: "/business/real-estate" },
-        { label: "Financial Services", href: "/business/financial" },
-      ],
     },
     {
       label: "Sustainability",
