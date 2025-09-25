@@ -29,7 +29,13 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navigationItems = [
+  type NavigationItem = {
+    label: string;
+    href: string;
+    dropdown?: { label: string; href: string }[];
+  };
+
+  const navigationItems: NavigationItem[] = [
     {
       label: "Home",
       href: "/",
@@ -43,22 +49,8 @@ const Header = () => {
       href: "/business",
     },
     {
-      label: "Sustainability",
-      href: "/sustainability",
-      dropdown: [
-        { label: "Environmental Impact", href: "/sustainability/environment" },
-        { label: "Social Responsibility", href: "/sustainability/social" },
-        { label: "Community Development", href: "/sustainability/community" },
-      ],
-    },
-    {
-      label: "Media",
-      href: "/media",
-      dropdown: [
-        { label: "Press Releases", href: "/media/press" },
-        { label: "News", href: "/media/news" },
-        { label: "Media Kit", href: "/media/kit" },
-      ],
+      label: "News",
+      href: "/news",
     },
     {
       label: "Careers",
