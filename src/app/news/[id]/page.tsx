@@ -147,7 +147,7 @@ export default function NewsArticlePage() {
               Article Not Found
             </h1>
             <p className="text-gray-600 mb-8">
-              The article you're looking for doesn't exist.
+              The article youre looking for dose not exist.
             </p>
             <Link
               href="/news"
@@ -323,7 +323,7 @@ export default function NewsArticlePage() {
                         Communities
                       </h3>
                       <p className="text-gray-600 text-sm">
-                        OvyeGroup's healthcare division introduces mobile health
+                        OvyeGroups healthcare division introduces mobile health
                         clinics and telemedicine services...
                       </p>
                     </div>
