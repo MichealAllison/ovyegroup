@@ -5,8 +5,13 @@ import {
   Zap,
   Factory,
   Smartphone,
-  Building,
+  Building2,
   CreditCard,
+  Heart,
+  Sprout,
+  Pickaxe,
+  Truck,
+  GraduationCap,
   TrendingUp,
   Users,
   Globe,
@@ -20,10 +25,10 @@ export default function BusinessPage() {
   const businessSectors = [
     {
       id: "agriculture",
-      title: "Agriculture",
-      icon: Zap,
+      title: "Agriculture & Food",
+      icon: Sprout,
       description:
-        "Africa has vast arable land and favorable climatic conditions for agriculture. Investing in modern farming techniques, irrigation systems, agribusiness, and value-added processing can boost agricultural productivity, food security, and export opportunities.",
+        "Africa has vast arable land and favorable climatic conditions for agriculture. We invest in modern farming techniques, irrigation systems, agribusiness, and value-added processing to boost agricultural productivity, food security, and export opportunities.",
       highlights: [
         "Modern Farming Techniques",
         "Irrigation Systems",
@@ -35,62 +40,137 @@ export default function BusinessPage() {
     },
     {
       id: "finance",
-      title: "Finance",
+      title: "Financial Services",
       icon: CreditCard,
       description:
-        "We are addressing Africa's infrastructure deficit by mobilizing global capital and allocating it to sectors that will power Africa to prosperity.",
+        "We address Africa's infrastructure deficit by mobilizing global capital and allocating it to sectors that will power Africa to prosperity. Our comprehensive financial services include banking, insurance, and investment management.",
       highlights: [
         "Capital Mobilization",
         "Infrastructure Investment",
-        "Financial Solutions",
-        "Economic Development",
+        "Commercial Banking",
+        "Investment Management",
       ],
-      stats: { capital: "$2B+", projects: "150+", impact: "12 countries" },
+      stats: { capital: "$2B+", customers: "2M+", branches: "150+" },
       image: "/api/placeholder/600/400",
     },
     {
-      id: "health",
-      title: "Health",
-      icon: Factory,
+      id: "healthcare",
+      title: "Healthcare Services",
+      icon: Heart,
       description:
-        "To ensure the well-being and productivity of our populace, it is imperative for Africa to prioritize the establishment of dependable and accessible healthcare services. By investing in top-tier health facilities, cutting-edge equipment, and quality services.",
+        "To ensure the well-being and productivity of our populace, we prioritize establishing dependable and accessible healthcare services. We invest in top-tier health facilities, cutting-edge equipment, and quality services.",
       highlights: [
         "Health Facilities",
         "Medical Equipment",
         "Quality Healthcare Services",
-        "Accessible Healthcare",
+        "Telemedicine Solutions",
       ],
-      stats: { facilities: "25+", patients: "100K+", coverage: "85%" },
+      stats: { facilities: "50+", patients: "1M+", coverage: "85%" },
       image: "/api/placeholder/600/400",
     },
     {
       id: "mining",
-      title: "Mining",
-      icon: Building,
+      title: "Mining & Resources",
+      icon: Pickaxe,
       description:
-        "We are addressing Africa's infrastructure deficit by mobilizing global capital and allocating it to sectors that will power Africa to prosperity.",
+        "Responsible extraction and processing of Africa's mineral wealth. Our mining operations focus on sustainable practices while maintaining the highest environmental and safety standards across all projects.",
       highlights: [
         "Resource Extraction",
         "Sustainable Mining",
-        "Infrastructure Development",
-        "Economic Growth",
+        "Environmental Compliance",
+        "Safety Standards",
       ],
-      stats: { operations: "12+", output: "2M tons", employment: "5K+" },
+      stats: { operations: "25+", output: "2.5M oz", safety: "99.8%" },
       image: "/api/placeholder/600/400",
     },
     {
-      id: "financial",
-      title: "Financial Services",
-      icon: CreditCard,
+      id: "energy",
+      title: "Energy & Power",
+      icon: Zap,
       description:
-        "Providing comprehensive financial services including banking, insurance, investment management, and microfinance solutions across Africa.",
+        "Developing renewable energy projects and traditional power generation facilities. We're committed to providing reliable, affordable energy while supporting Africa's transition to clean energy solutions.",
       highlights: [
-        "Commercial Banking",
-        "Insurance Services",
-        "Investment Management",
-        "Microfinance",
+        "Solar Power Plants",
+        "Wind Energy",
+        "Hydroelectric Projects",
+        "Energy Storage",
       ],
-      stats: { customers: "2M+", branches: "150+", assets: "$5B+" },
+      stats: { capacity: "2.5GW", projects: "45+", households: "3M+" },
+      image: "/api/placeholder/600/400",
+    },
+    {
+      id: "manufacturing",
+      title: "Manufacturing",
+      icon: Factory,
+      description:
+        "Modern manufacturing facilities producing consumer goods, industrial equipment, and construction materials. Our operations focus on quality, efficiency, and supporting local supply chains across Africa.",
+      highlights: [
+        "Consumer Goods",
+        "Industrial Equipment",
+        "Construction Materials",
+        "Automotive Parts",
+      ],
+      stats: { facilities: "30+", products: "500+", exports: "40%" },
+      image: "/api/placeholder/600/400",
+    },
+    {
+      id: "technology",
+      title: "Technology & Innovation",
+      icon: Smartphone,
+      description:
+        "Digital transformation and technology solutions including telecommunications infrastructure, software development, and fintech platforms that drive economic growth across Africa.",
+      highlights: [
+        "Telecommunications",
+        "Software Development",
+        "Fintech Solutions",
+        "Digital Infrastructure",
+      ],
+      stats: { users: "10M+", apps: "25+", coverage: "85%" },
+      image: "/api/placeholder/600/400",
+    },
+    {
+      id: "real-estate",
+      title: "Real Estate & Construction",
+      icon: Building2,
+      description:
+        "Developing residential, commercial, and industrial properties across major African cities. We create modern, sustainable communities while supporting urban development and economic growth.",
+      highlights: [
+        "Residential Developments",
+        "Commercial Properties",
+        "Industrial Parks",
+        "Infrastructure Projects",
+      ],
+      stats: { projects: "100+", units: "25K+", cities: "20+" },
+      image: "/api/placeholder/600/400",
+    },
+    {
+      id: "transportation",
+      title: "Transportation & Logistics",
+      icon: Truck,
+      description:
+        "Comprehensive transportation and logistics solutions including freight services, warehousing, and supply chain management. We connect markets and facilitate trade across Africa.",
+      highlights: [
+        "Freight Services",
+        "Warehousing",
+        "Supply Chain Management",
+        "Last-Mile Delivery",
+      ],
+      stats: { vehicles: "2K+", warehouses: "50+", routes: "200+" },
+      image: "/api/placeholder/600/400",
+    },
+    {
+      id: "education",
+      title: "Education & Training",
+      icon: GraduationCap,
+      description:
+        "Educational institutions and training programs that develop human capital across Africa. We operate schools, universities, and vocational training centers focused on practical skills and innovation.",
+      highlights: [
+        "Primary & Secondary Schools",
+        "Universities",
+        "Vocational Training",
+        "Online Learning Platforms",
+      ],
+      stats: { students: "75K+", institutions: "80+", graduates: "200K+" },
       image: "/api/placeholder/600/400",
     },
   ];
@@ -99,26 +179,26 @@ export default function BusinessPage() {
     {
       icon: TrendingUp,
       title: "Revenue Growth",
-      value: "25%",
+      value: "35%",
       description: "Year-over-year growth across all business sectors",
     },
     {
       icon: Users,
       title: "Employment",
-      value: "50K+",
-      description: "Direct jobs created across Africa",
+      value: "150K+",
+      description: "Direct and indirect jobs created across Africa",
     },
     {
       icon: Globe,
       title: "Market Presence",
-      value: "15",
-      description: "Countries with active operations",
+      value: "20",
+      description: "Countries with active operations and partnerships",
     },
     {
       icon: Factory,
-      title: "Facilities",
-      value: "100+",
-      description: "Manufacturing and service facilities",
+      title: "Total Facilities",
+      value: "500+",
+      description: "Combined facilities across all business sectors",
     },
   ];
 
@@ -146,17 +226,67 @@ export default function BusinessPage() {
         </div>
       </section>
 
+      {/* Business Sectors Grid Overview */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              All Business Sectors
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore our comprehensive portfolio spanning across{" "}
+              {businessSectors.length} key sectors driving Africa&apos;s
+              economic transformation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {businessSectors.map((sector, index) => (
+              <motion.div
+                key={sector.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                onClick={() => {
+                  document
+                    .getElementById(`sector-${sector.id}`)
+                    ?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
+                }}
+              >
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
+                  <sector.icon className="w-6 h-6 text-blue-600 group-hover:text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  {sector.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                  {sector.description}
+                </p>
+                <div className="flex items-center text-blue-600 text-sm font-medium">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Business Overview */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Business Portfolio
+              Detailed Portfolio Overview
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our diversified business portfolio spans key sectors of the
-              African economy, creating synergies and driving sustainable
-              growth.
+              Explore the comprehensive details of each business sector,
+              including key highlights, performance metrics, and strategic focus
+              areas.
             </p>
           </div>
 
@@ -164,6 +294,7 @@ export default function BusinessPage() {
             {businessSectors.map((sector, index) => (
               <motion.div
                 key={sector.id}
+                id={`sector-${sector.id}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}

@@ -282,10 +282,16 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          <div className="flex justify-center mt-8">
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-              View More
-            </button>
+          <div className="flex justify-center mt-12">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/business"
+                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors gap-2"
+              >
+                View All Business Sectors
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
