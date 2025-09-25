@@ -122,10 +122,10 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                To create sustainable value across diverse business sectors
-                while contributing to Africa&apos;s economic development,
-                empowering communities, and fostering innovation that addresses
-                the continent&apos;s unique challenges and opportunities.
+                To create technologies that solve major problems and accelerate
+                the world&apos;s transition to a sustainable tech system. We are
+                keen on identifying prolonged problems existing in emerging
+                communities and providing corresponding solutions for everyone.
               </p>
             </motion.div>
 
@@ -142,10 +142,10 @@ export default function AboutPage() {
                 Our Vision
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                To be Africa&apos;s most respected and admired conglomerate,
-                recognized for our commitment to excellence, sustainability, and
-                positive impact on society while leading the continent&apos;s
-                transformation into a global economic powerhouse.
+                To create solution-centric products that improve living
+                conditions and increase economic profitability in Africa, while
+                becoming the leading innovator in sustainable technology
+                solutions for emerging communities worldwide.
               </p>
             </motion.div>
           </div>

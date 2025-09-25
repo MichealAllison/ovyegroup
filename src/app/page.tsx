@@ -30,29 +30,29 @@ export default function Home() {
       title: "Agriculture",
       description:
         "Africa has vast arable land and favorable climatic conditions for agriculture. Investing in modern farming techniques, irrigation systems, agribusiness, and value-added processing can boost agricultural productivity, food security, and export opportunities.",
-      image: "/images/energy.png",
-      link: "/business/energy",
+      image: "/images/agriculture.png",
+      link: "/business/agriculture",
     },
     {
       title: "Finance",
       description:
         "We are addressing Africa's infrastructure deficit by mobilizing global capital and allocating it to sectors that will power Africa to prosperity.",
-      image: "/images/manufacturing.png",
-      link: "/business/manufacturing",
+      image: "/images/finance.png",
+      link: "/business/finance",
     },
     {
       title: "Health",
       description:
         "To ensure the well-being and productivity of our populace, it is imperative for Africa to prioritize the establishment of dependable and accessible healthcare services. By investing in top-tier health facilities, cutting-edge equipment, and quality services.",
-      image: "/images/technology.png",
-      link: "/business/technology",
+      image: "/images/health.png",
+      link: "/business/health",
     },
     {
       title: "Mining",
       description:
         "We are addressing Africa's infrastructure deficit by mobilizing global capital and allocating it to sectors that will power Africa to prosperity.",
-      image: "/images/realestate.png",
-      link: "/business/real-estate",
+      image: "/images/mining.png",
+      link: "/business/mining",
     },
   ];
 
@@ -101,15 +101,16 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-              Building a
+              Innovating Industries
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
-                Prosperous Africa
+                from Africa to the World
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              OvyeGroup is a diversified African conglomerate committed to
-              creating sustainable value across multiple industries while
-              empowering communities and driving economic growth.
+              We create solution-centric products that improve living conditions
+              and increase economic profitability in Africa. Our mission is to
+              create technologies that solve major problems and accelerate the
+              world&apos;s transition to a sustainable tech system.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <motion.div
@@ -176,32 +177,32 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Leading Africa&apos;s Economic Transformation
+                Solving Africa&apos;s Greatest Challenges
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                For over two decades, OvyeGroup has been at the forefront of
-                Africa&apos;s economic development. We believe in the potential
-                of our continent and are committed to creating sustainable
-                businesses that provide essential services and products while
-                generating employment and prosperity for local communities.
+                We are keen on identifying prolonged problems existing in
+                emerging communities and providing corresponding solutions that
+                would solve those problems for everyone. Our focus is on
+                creating solution-centric products that improve living
+                conditions and increase economic profitability across Africa.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                   <span className="text-gray-700">
-                    Diversified portfolio across key industries
+                    Solution-centric technology products
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                   <span className="text-gray-700">
-                    Commitment to sustainable development
+                    Sustainable tech system development
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                   <span className="text-gray-700">
-                    Strong focus on community empowerment
+                    Problem-solving for emerging communities
                   </span>
                 </div>
               </div>
@@ -221,11 +222,12 @@ export default function Home() {
             >
               <div className="aspect-square rounded-2xl inset-0 bg-[url('/images/visionimg.png')] bg-cover bg-center p-8 text-white">
                 <div className="h-full w-full flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-6 rounded-2xl">
-                  <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
+                  <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
                   <p className="text-blue-100 text-lg leading-relaxed">
-                    To be Africa&apos;s most respected conglomerate, creating
-                    sustainable value for all stakeholders while contributing to
-                    the continent&apos;s prosperity and development.
+                    To create technologies that solve major problems and
+                    accelerate the world&apos;s transition to a sustainable tech
+                    system, while improving living conditions and increasing
+                    economic profitability in Africa.
                   </p>
                 </div>
               </div>
@@ -279,6 +281,11 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+          <div className="flex justify-center mt-8">
+            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              View More
+            </button>
           </div>
         </div>
       </section>
