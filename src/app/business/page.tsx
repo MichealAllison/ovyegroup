@@ -207,7 +207,10 @@ export default function BusinessPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
+      <section
+        className="pt-20 bg-cover bg-center text-white"
+        style={{ backgroundImage: "url('/images/business2.png')" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -269,93 +272,6 @@ export default function BusinessPage() {
                 <div className="flex items-center text-blue-600 text-sm font-medium">
                   <span>Learn More</span>
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Business Overview */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Detailed Portfolio Overview
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore the comprehensive details of each business sector,
-              including key highlights, performance metrics, and strategic focus
-              areas.
-            </p>
-          </div>
-
-          <div className="space-y-20">
-            {businessSectors.map((sector, index) => (
-              <motion.div
-                key={sector.id}
-                id={`sector-${sector.id}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
-                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                }`}
-              >
-                <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                      <sector.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold text-gray-900">
-                      {sector.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    {sector.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-4 mb-8">
-                    {sector.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                        <span className="text-gray-700 font-medium">
-                          {highlight}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-4 mb-8">
-                    {Object.entries(sector.stats).map(([key, value]) => (
-                      <div key={key} className="text-center">
-                        <div className="text-2xl font-bold text-blue-600">
-                          {value}
-                        </div>
-                        <div className="text-sm text-gray-600 capitalize">
-                          {key}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link
-                    href={`/business/${sector.id}`}
-                    className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors gap-2"
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-
-                <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
-                  <div className="aspect-video rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 overflow-hidden">
-                    {/* Placeholder for business sector image */}
-                    <div className="w-full h-full flex items-center justify-center">
-                      <sector.icon className="w-24 h-24 text-white/20" />
-                    </div>
-                  </div>
                 </div>
               </motion.div>
             ))}
