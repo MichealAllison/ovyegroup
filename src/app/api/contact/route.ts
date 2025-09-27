@@ -5,12 +5,15 @@ import { NextResponse } from "next/server";
 import { render } from "@react-email/render";
 import { contactSchema } from "@/types/contact";
 
-const apiKey = process.env.RESEND_API_KEY;
-if (!apiKey) {
-  throw new Error("Missing RESEND_API_KEY environment variable");
+// Lazily create a Resend client during the request so build does not fail if
+// the environment variable is missing at build time (e.g. on Vercel preview).
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return { error: new Error("Missing RESEND_API_KEY environment variable") } as const;
+  }
+  return { client: new Resend(apiKey) } as const;
 }
-
-const resend = new Resend(apiKey);
 
 export async function POST(request: Request) {
   try {
@@ -22,7 +25,24 @@ export async function POST(request: Request) {
       await submitContactForm(body);
     if (!dbSuccess) throw dbError;
 
-    // Generate both email templates
+    // Prepare emails only if we have the API key
+    const resendInit = getResendClient();
+    if ("error" in resendInit) {
+      // Still consider the form submission successful, but surface the email issue.
+      return NextResponse.json(
+        {
+          success: true,
+            message:
+            "Form saved, but email service is not configured (missing RESEND_API_KEY).",
+          data: { submission: dbSuccess },
+          emailDisabled: true,
+        },
+        { status: 202 }
+      );
+    }
+    const resend = resendInit.client;
+
+    // Generate both email templates concurrently
     const [adminHtml, userHtml] = await Promise.all([
       render(ContactFormEmail.Admin(body)),
       render(ContactFormEmail.User(body)),
@@ -36,7 +56,6 @@ export async function POST(request: Request) {
       subject: `New Contact Form Submission: ${body.subject}`,
       html: adminHtml,
     });
-
     if (adminEmailError) throw adminEmailError;
 
     // Send confirmation email to user
@@ -46,7 +65,6 @@ export async function POST(request: Request) {
       subject: "Thank You for Contacting OvyeGroup",
       html: userHtml,
     });
-
     if (userEmailError) throw userEmailError;
 
     return NextResponse.json({

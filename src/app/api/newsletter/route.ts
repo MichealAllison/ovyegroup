@@ -5,7 +5,11 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { render } from "@react-email/render";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return { error: new Error("Missing RESEND_API_KEY environment variable") } as const;
+  return { client: new Resend(apiKey) } as const;
+}
 
 const subscribeSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -17,9 +21,19 @@ export async function POST(request: Request) {
     const { email } = subscribeSchema.parse(json);
 
     // Submit to Supabase
-    const { success: dbSuccess, error: dbError } =
-      await subscribeNewsletter(email);
-    if (!dbError) throw dbError;
+    const { success: dbSuccess, error: dbError } = await subscribeNewsletter(email);
+    if (dbError) throw dbError;
+
+    const resendInit = getResendClient();
+    if ("error" in resendInit) {
+      return NextResponse.json({
+        success: true,
+        message: "Subscribed, but email service is not configured (missing RESEND_API_KEY).",
+        data: { subscription: dbSuccess },
+        emailDisabled: true,
+      }, { status: 202 });
+    }
+    const resend = resendInit.client;
 
     // Generate email HTML using React Email
     const html = await render(NewsletterWelcomeEmail({ email }));
@@ -31,7 +45,6 @@ export async function POST(request: Request) {
       subject: "Welcome to OvyeGroup Newsletter",
       html: html,
     });
-
     if (emailError) throw emailError;
 
     return NextResponse.json({
