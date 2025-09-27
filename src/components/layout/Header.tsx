@@ -141,7 +141,7 @@ const Header = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`lg:hidden p-2 rounded-md ${
-              scrolled ? "text-gray-700" : "text-white"
+              scrolled ? "text-gray-700" : "text-[#f1f1f1]"
             }`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
