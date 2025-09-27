@@ -5,10 +5,12 @@ import { NextResponse } from "next/server";
 import { render } from "@react-email/render";
 import { contactSchema } from "@/types/contact";
 
-// Debug: Log the API key presence (not the actual key)
-console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY);
+const apiKey = process.env.RESEND_API_KEY;
+if (!apiKey) {
+  throw new Error("Missing RESEND_API_KEY environment variable");
+}
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(apiKey);
 
 export async function POST(request: Request) {
   try {
