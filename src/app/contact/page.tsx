@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { submitContactForm } from "@/lib/supabase";
 import {
   Mail,
   Phone,
@@ -48,15 +49,19 @@ export default function ContactPage() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      // Here you would integrate with Supabase or your backend
-      console.log("Form data:", data);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message);
 
       setSubmitStatus("success");
       reset();
-    } catch (error) {
+    } catch (error: Error | unknown) {
+      console.error("Contact form submission error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

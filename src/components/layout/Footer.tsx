@@ -11,8 +11,8 @@ import {
   Twitter,
   Linkedin,
   Instagram,
-  ArrowRight,
 } from "lucide-react";
+import NewsletterForm from "@/components/ui/NewsletterForm";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -68,22 +68,7 @@ const Footer = () => {
               </p>
             </div>
             <div>
-              <form className="flex flex-col sm:flex-row gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-                />
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  type="submit"
-                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors flex items-center gap-2"
-                >
-                  Subscribe
-                  <ArrowRight className="w-4 h-4" />
-                </motion.button>
-              </form>
+              <NewsletterForm />
             </div>
           </div>
         </div>
@@ -153,6 +138,16 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="lg:col-span-2">
+            <h4 className="text-lg font-semibold mb-6">Newsletter</h4>
+            <p className="text-gray-300 text-sm mb-4">
+              Subscribe to our newsletter for updates on our latest projects and
+              initiatives.
+            </p>
+            <NewsletterForm />
           </div>
 
           {/* Contact & Social */}
