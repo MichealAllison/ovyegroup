@@ -7,7 +7,10 @@ import { render } from "@react-email/render";
 
 function getResendClient() {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return { error: new Error("Missing RESEND_API_KEY environment variable") } as const;
+  if (!apiKey)
+    return {
+      error: new Error("Missing RESEND_API_KEY environment variable"),
+    } as const;
   return { client: new Resend(apiKey) } as const;
 }
 
@@ -21,17 +24,22 @@ export async function POST(request: Request) {
     const { email } = subscribeSchema.parse(json);
 
     // Submit to Supabase
-    const { success: dbSuccess, error: dbError } = await subscribeNewsletter(email);
+    const { success: dbSuccess, error: dbError } =
+      await subscribeNewsletter(email);
     if (dbError) throw dbError;
 
     const resendInit = getResendClient();
     if ("error" in resendInit) {
-      return NextResponse.json({
-        success: true,
-        message: "Subscribed, but email service is not configured (missing RESEND_API_KEY).",
-        data: { subscription: dbSuccess },
-        emailDisabled: true,
-      }, { status: 202 });
+      return NextResponse.json(
+        {
+          success: true,
+          message:
+            "Subscribed, but email service is not configured (missing RESEND_API_KEY).",
+          data: { subscription: dbSuccess },
+          emailDisabled: true,
+        },
+        { status: 202 }
+      );
     }
     const resend = resendInit.client;
 

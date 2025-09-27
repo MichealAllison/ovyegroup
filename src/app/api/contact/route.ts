@@ -10,7 +10,9 @@ import { contactSchema } from "@/types/contact";
 function getResendClient() {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    return { error: new Error("Missing RESEND_API_KEY environment variable") } as const;
+    return {
+      error: new Error("Missing RESEND_API_KEY environment variable"),
+    } as const;
   }
   return { client: new Resend(apiKey) } as const;
 }
@@ -32,7 +34,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: true,
-            message:
+          message:
             "Form saved, but email service is not configured (missing RESEND_API_KEY).",
           data: { submission: dbSuccess },
           emailDisabled: true,
