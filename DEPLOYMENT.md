@@ -25,6 +25,18 @@ Add these in Vercel dashboard:
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `RESEND_API_KEY` (for email functionality)
+
+### 4. Database Security Setup
+
+Before going live, ensure Row Level Security (RLS) is enabled on your Supabase tables:
+
+```bash
+# Apply database security migrations
+# See supabase/README.md for detailed instructions
+```
+
+Run the SQL migrations in `supabase/enable_rls_all_tables.sql` via your Supabase dashboard to secure the contact and newsletter tables.
 
 ### 4. Custom Domain Setup
 
