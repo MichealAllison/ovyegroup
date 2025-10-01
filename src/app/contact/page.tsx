@@ -56,26 +56,34 @@ export default function ContactPage() {
       });
 
       const result = await response.json();
-      
+
       // Log the full response for debugging
       console.log("API Response:", result);
-      
+
       if (!result.success) {
         // If email is disabled but form was saved, show success message
         if (result.emailDisabled) {
-          console.warn("Email service unavailable, but form was saved:", result.message);
+          console.warn(
+            "Email service unavailable, but form was saved:",
+            result.message
+          );
           setSubmitStatus("success");
           reset();
           return;
         }
-        throw new Error(result.message || result.error || "Unknown error occurred");
+        throw new Error(
+          result.message || result.error || "Unknown error occurred"
+        );
       }
 
       setSubmitStatus("success");
       reset();
     } catch (error: Error | unknown) {
       console.error("Contact form submission error:", error);
-      console.error("Error details:", error instanceof Error ? error.message : String(error));
+      console.error(
+        "Error details:",
+        error instanceof Error ? error.message : String(error)
+      );
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

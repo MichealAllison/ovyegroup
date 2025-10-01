@@ -76,28 +76,53 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Contact form error:", error);
-    
+    console.error("Error details:", JSON.stringify(error, null, 2));
+
     // Provide more specific error information
     let errorMessage = "Error processing contact form";
-    const errorDetails = error instanceof Error ? error.message : String(error);
-    
-    if (errorDetails.includes("relation") && errorDetails.includes("does not exist")) {
+    let errorDetails = "Unknown error";
+    let fullError = null;
+
+    if (error instanceof Error) {
+      errorDetails = error.message;
+      fullError = {
+        name: error.name,
+        message: error.message,
+        stack: error.stack?.split('\n').slice(0, 5), // First 5 lines of stack
+      };
+    } else {
+      errorDetails = String(error);
+      fullError = error;
+    }
+
+    if (
+      errorDetails.includes("relation") &&
+      errorDetails.includes("does not exist")
+    ) {
       errorMessage = "Database table not found - please check database setup";
-    } else if (errorDetails.includes("permission denied") || errorDetails.includes("RLS")) {
+    } else if (
+      errorDetails.includes("permission denied") ||
+      errorDetails.includes("RLS") ||
+      errorDetails.includes("policy")
+    ) {
       errorMessage = "Database access denied - please check RLS policies";
     } else if (errorDetails.includes("RESEND_API_KEY")) {
       errorMessage = "Email service configuration error";
+    } else if (errorDetails.includes("duplicate key")) {
+      errorMessage = "Duplicate entry - this submission may already exist";
     }
-    
+
     return NextResponse.json(
       {
         success: false,
         message: errorMessage,
         error: errorDetails,
+        fullError: fullError,
         debugInfo: {
-          errorType: error instanceof Error ? error.constructor.name : typeof error,
+          errorType:
+            error instanceof Error ? error.constructor.name : typeof error,
           timestamp: new Date().toISOString(),
-        }
+        },
       },
       { status: 400 }
     );
