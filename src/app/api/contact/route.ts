@@ -88,7 +88,7 @@ export async function POST(request: Request) {
       fullError = {
         name: error.name,
         message: error.message,
-        stack: error.stack?.split('\n').slice(0, 5), // First 5 lines of stack
+        stack: error.stack?.split("\n").slice(0, 5), // First 5 lines of stack
       };
     } else {
       errorDetails = String(error);
