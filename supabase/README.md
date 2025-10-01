@@ -70,9 +70,9 @@ psql -h your-host -U postgres -d your-database -f supabase/migrations/2024100100
 After applying the migrations, you can verify RLS is enabled by running:
 
 ```sql
-SELECT schemaname, tablename, rowsecurity 
-FROM pg_tables 
-WHERE schemaname = 'public' 
+SELECT schemaname, tablename, rowsecurity
+FROM pg_tables
+WHERE schemaname = 'public'
 AND tablename IN ('contact_submissions', 'newsletter_subscriptions');
 ```
 

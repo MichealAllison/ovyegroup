@@ -76,11 +76,28 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Contact form error:", error);
+    
+    // Provide more specific error information
+    let errorMessage = "Error processing contact form";
+    const errorDetails = error instanceof Error ? error.message : String(error);
+    
+    if (errorDetails.includes("relation") && errorDetails.includes("does not exist")) {
+      errorMessage = "Database table not found - please check database setup";
+    } else if (errorDetails.includes("permission denied") || errorDetails.includes("RLS")) {
+      errorMessage = "Database access denied - please check RLS policies";
+    } else if (errorDetails.includes("RESEND_API_KEY")) {
+      errorMessage = "Email service configuration error";
+    }
+    
     return NextResponse.json(
       {
         success: false,
-        message: "Error processing contact form",
-        error: error instanceof Error ? error.message : String(error),
+        message: errorMessage,
+        error: errorDetails,
+        debugInfo: {
+          errorType: error instanceof Error ? error.constructor.name : typeof error,
+          timestamp: new Date().toISOString(),
+        }
       },
       { status: 400 }
     );
