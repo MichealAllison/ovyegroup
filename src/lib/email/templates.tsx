@@ -39,14 +39,15 @@ export const ContactFormEmail = {
             <Heading style={modernStyles.title}>
               Thank You for Reaching Out!
             </Heading>
-            
+
             <Text style={modernStyles.greeting}>
               Dear {data.firstName} {data.lastName},
             </Text>
-            
+
             <Text style={modernStyles.paragraph}>
-              We&apos;ve received your message and truly appreciate you taking the time to connect with us. 
-              Your inquiry is important to us, and our team is already reviewing your submission.
+              We&apos;ve received your message and truly appreciate you taking
+              the time to connect with us. Your inquiry is important to us, and
+              our team is already reviewing your submission.
             </Text>
 
             {/* Inquiry Summary Card */}
@@ -55,17 +56,20 @@ export const ContactFormEmail = {
                 Your Inquiry Summary
               </Heading>
               <Hr style={modernStyles.cardDivider} />
-              
+
               <Text style={modernStyles.summaryItem}>
-                <strong style={modernStyles.label}>Subject:</strong> {data.subject}
+                <strong style={modernStyles.label}>Subject:</strong>{" "}
+                {data.subject}
               </Text>
               <Text style={modernStyles.summaryItem}>
-                <strong style={modernStyles.label}>Type:</strong> {data.inquiryType}
+                <strong style={modernStyles.label}>Type:</strong>{" "}
+                {data.inquiryType}
               </Text>
               <Text style={modernStyles.summaryItem}>
-                <strong style={modernStyles.label}>Contact Email:</strong> {data.email}
+                <strong style={modernStyles.label}>Contact Email:</strong>{" "}
+                {data.email}
               </Text>
-              
+
               <Section style={modernStyles.messageBox}>
                 <Text style={modernStyles.messageLabel}>Your Message:</Text>
                 <Text style={modernStyles.messageText}>{data.message}</Text>
@@ -78,8 +82,9 @@ export const ContactFormEmail = {
                 ⏱️ What happens next?
               </Text>
               <Text style={modernStyles.timelineText}>
-                Our team will review your inquiry and respond within <strong>24-48 hours</strong>. 
-                For urgent matters, please call us directly at +234 1 234 5678.
+                Our team will review your inquiry and respond within{" "}
+                <strong>24-48 hours</strong>. For urgent matters, please call us
+                directly at +234 1 234 5678.
               </Text>
             </Section>
 
@@ -98,18 +103,37 @@ export const ContactFormEmail = {
           <Section style={modernStyles.footer}>
             <Hr style={modernStyles.footerDivider} />
             <Text style={modernStyles.footerText}>
-              <strong>OvyeGroup</strong><br />
-              Victoria Island, Lagos, Nigeria<br />
+              <strong>OvyeGroup</strong>
+              <br />
+              Victoria Island, Lagos, Nigeria
+              <br />
               Phone: +234 1 234 5678 | Email: info@ovyegroup.com
             </Text>
             <Text style={modernStyles.footerLinks}>
-              <Link href="https://ovyegroup.com" style={modernStyles.footerLink}>Website</Link> • 
-              <Link href="https://ovyegroup.com/about" style={modernStyles.footerLink}>About</Link> • 
-              <Link href="https://ovyegroup.com/contact" style={modernStyles.footerLink}>Contact</Link>
+              <Link
+                href="https://ovyegroup.com"
+                style={modernStyles.footerLink}
+              >
+                Website
+              </Link>{" "}
+              •
+              <Link
+                href="https://ovyegroup.com/about"
+                style={modernStyles.footerLink}
+              >
+                About
+              </Link>{" "}
+              •
+              <Link
+                href="https://ovyegroup.com/contact"
+                style={modernStyles.footerLink}
+              >
+                Contact
+              </Link>
             </Text>
             <Text style={modernStyles.footerNote}>
-              This email was sent because you submitted a contact form on our website. 
-              If you have any questions, please reply to this email.
+              This email was sent because you submitted a contact form on our
+              website. If you have any questions, please reply to this email.
             </Text>
           </Section>
         </Container>
@@ -144,34 +168,43 @@ export const ContactFormEmail = {
               👤 Contact Information
             </Heading>
             <Hr style={modernStyles.cardDivider} />
-            
+
             <Section style={modernStyles.contactGrid}>
               <Text style={modernStyles.adminField}>
-                <strong style={modernStyles.adminLabel}>Full Name:</strong><br />
+                <strong style={modernStyles.adminLabel}>Full Name:</strong>
+                <br />
                 {data.firstName} {data.lastName}
               </Text>
               <Text style={modernStyles.adminField}>
-                <strong style={modernStyles.adminLabel}>Email:</strong><br />
-                <Link href={`mailto:${data.email}`} style={modernStyles.emailLink}>
+                <strong style={modernStyles.adminLabel}>Email:</strong>
+                <br />
+                <Link
+                  href={`mailto:${data.email}`}
+                  style={modernStyles.emailLink}
+                >
                   {data.email}
                 </Link>
               </Text>
               <Text style={modernStyles.adminField}>
-                <strong style={modernStyles.adminLabel}>Phone:</strong><br />
+                <strong style={modernStyles.adminLabel}>Phone:</strong>
+                <br />
                 <Link href={`tel:${data.phone}`} style={modernStyles.phoneLink}>
                   {data.phone}
                 </Link>
               </Text>
               {data.company && (
                 <Text style={modernStyles.adminField}>
-                  <strong style={modernStyles.adminLabel}>Company:</strong><br />
+                  <strong style={modernStyles.adminLabel}>Company:</strong>
+                  <br />
                   {data.company}
                 </Text>
               )}
               <Text style={modernStyles.adminField}>
-                <strong style={modernStyles.adminLabel}>Inquiry Type:</strong><br />
+                <strong style={modernStyles.adminLabel}>Inquiry Type:</strong>
+                <br />
                 <span style={modernStyles.inquiryBadge}>
-                  {data.inquiryType.charAt(0).toUpperCase() + data.inquiryType.slice(1)}
+                  {data.inquiryType.charAt(0).toUpperCase() +
+                    data.inquiryType.slice(1)}
                 </span>
               </Text>
             </Section>
@@ -183,12 +216,13 @@ export const ContactFormEmail = {
               💬 Message Details
             </Heading>
             <Hr style={modernStyles.cardDivider} />
-            
+
             <Text style={modernStyles.adminField}>
-              <strong style={modernStyles.adminLabel}>Subject:</strong><br />
+              <strong style={modernStyles.adminLabel}>Subject:</strong>
+              <br />
               <span style={modernStyles.subjectText}>{data.subject}</span>
             </Text>
-            
+
             <Section style={modernStyles.adminMessageBox}>
               <Text style={modernStyles.adminLabel}>Message:</Text>
               <Text style={modernStyles.adminMessageText}>{data.message}</Text>
@@ -215,8 +249,10 @@ export const ContactFormEmail = {
           <Section style={modernStyles.adminFooter}>
             <Hr style={modernStyles.footerDivider} />
             <Text style={modernStyles.adminFooterText}>
-              <strong>OvyeGroup Admin Dashboard</strong><br />
-              Submission received at: {new Date().toLocaleString()}<br />
+              <strong>OvyeGroup Admin Dashboard</strong>
+              <br />
+              Submission received at: {new Date().toLocaleString()}
+              <br />
               This notification was automatically generated.
             </Text>
           </Section>
@@ -250,27 +286,34 @@ export const NewsletterWelcomeEmail = ({ email }: { email: string }) => (
           <Heading style={modernStyles.title}>
             🎉 Welcome to OvyeGroup Newsletter!
           </Heading>
-          
+
           <Text style={modernStyles.paragraph}>
-            Thank you for subscribing to our newsletter! You&apos;re now part of our community and will be the first to know about:
+            Thank you for subscribing to our newsletter! You&apos;re now part of
+            our community and will be the first to know about:
           </Text>
 
           {/* Benefits List */}
           <Section style={modernStyles.benefitsCard}>
             <Text style={modernStyles.benefitItem}>
-              🏢 <strong>Latest Projects & Developments</strong><br />
-              Stay updated on our newest ventures across technology, real estate, and energy sectors.
+              🏢 <strong>Latest Projects & Developments</strong>
+              <br />
+              Stay updated on our newest ventures across technology, real
+              estate, and energy sectors.
             </Text>
             <Text style={modernStyles.benefitItem}>
-              📈 <strong>Company News & Achievements</strong><br />
-              Be the first to hear about our milestones, partnerships, and industry recognition.
+              📈 <strong>Company News & Achievements</strong>
+              <br />
+              Be the first to hear about our milestones, partnerships, and
+              industry recognition.
             </Text>
             <Text style={modernStyles.benefitItem}>
-              💡 <strong>Industry Insights & Trends</strong><br />
+              💡 <strong>Industry Insights & Trends</strong>
+              <br />
               Get exclusive analysis and perspectives from our leadership team.
             </Text>
             <Text style={modernStyles.benefitItem}>
-              🤝 <strong>Investment Opportunities</strong><br />
+              🤝 <strong>Investment Opportunities</strong>
+              <br />
               Learn about potential partnership and investment opportunities.
             </Text>
           </Section>
@@ -281,18 +324,17 @@ export const NewsletterWelcomeEmail = ({ email }: { email: string }) => (
               ✅ Subscription Confirmed
             </Text>
             <Text style={modernStyles.confirmationText}>
-              <strong>Email:</strong> {email}<br />
-              <strong>Subscribed:</strong> {new Date().toLocaleDateString()}<br />
+              <strong>Email:</strong> {email}
+              <br />
+              <strong>Subscribed:</strong> {new Date().toLocaleDateString()}
+              <br />
               <strong>Frequency:</strong> Monthly updates
             </Text>
           </Section>
 
           {/* CTA Section */}
           <Section style={modernStyles.ctaSection}>
-            <Button
-              href="https://ovyegroup.com"
-              style={modernStyles.ctaButton}
-            >
+            <Button href="https://ovyegroup.com" style={modernStyles.ctaButton}>
               Explore OvyeGroup
             </Button>
           </Section>
@@ -302,18 +344,32 @@ export const NewsletterWelcomeEmail = ({ email }: { email: string }) => (
         <Section style={modernStyles.footer}>
           <Hr style={modernStyles.footerDivider} />
           <Text style={modernStyles.footerText}>
-            <strong>OvyeGroup</strong><br />
-            Victoria Island, Lagos, Nigeria<br />
+            <strong>OvyeGroup</strong>
+            <br />
+            Victoria Island, Lagos, Nigeria
+            <br />
             Phone: +234 1 234 5678 | Email: newsletter@ovyegroup.com
           </Text>
           <Text style={modernStyles.footerLinks}>
-            <Link href="https://ovyegroup.com" style={modernStyles.footerLink}>Website</Link> • 
-            <Link href="https://ovyegroup.com/about" style={modernStyles.footerLink}>About</Link> • 
-            <Link href="#" style={modernStyles.footerLink}>Unsubscribe</Link>
+            <Link href="https://ovyegroup.com" style={modernStyles.footerLink}>
+              Website
+            </Link>{" "}
+            •
+            <Link
+              href="https://ovyegroup.com/about"
+              style={modernStyles.footerLink}
+            >
+              About
+            </Link>{" "}
+            •
+            <Link href="#" style={modernStyles.footerLink}>
+              Unsubscribe
+            </Link>
           </Text>
           <Text style={modernStyles.footerNote}>
-            You received this email because you subscribed to our newsletter. 
-            If you didn&apos;t subscribe or want to unsubscribe, please click the link above.
+            You received this email because you subscribed to our newsletter. If
+            you didn&apos;t subscribe or want to unsubscribe, please click the
+            link above.
           </Text>
         </Section>
       </Container>
@@ -325,7 +381,8 @@ const modernStyles = {
   // Base styles
   body: {
     backgroundColor: "#f8fafc",
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    fontFamily:
+      "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
     margin: "0",
     padding: "0",
     lineHeight: "1.6",
