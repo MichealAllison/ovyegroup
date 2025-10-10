@@ -36,14 +36,16 @@ export default function OptimizedBackgroundImage({
         priority={priority}
         quality={quality}
         sizes={sizes}
-        onLoad={() => setIsLoaded(true)}
+        onLoadingComplete={() => setIsLoaded(true)}
       />
+
       {/* Loading placeholder */}
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-300 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-300 animate-pulse z-5" />
       )}
+
       {/* Content overlay */}
-      {children && <div className="relative z-10">{children}</div>}
+      {children && <div className="absolute inset-0 z-10">{children}</div>}
     </div>
   );
 }

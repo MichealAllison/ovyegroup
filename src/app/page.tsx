@@ -17,6 +17,7 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import OptimizedBackgroundImage from "@/components/ui/OptimizedBackgroundImage";
+import ImageDebugger from "@/components/ui/ImageDebugger";
 
 export default function Home() {
   const stats = [
@@ -86,23 +87,17 @@ export default function Home() {
 
   return (
     <div>
+      <ImageDebugger />
       <Header />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Pattern */}
-        <OptimizedBackgroundImage
-          src="/images/bg.png"
-          alt="OvyeGroup Background"
-          className="absolute inset-0"
-          priority
-          quality={60}
-          sizes="100vw"
-        />
+        {/* Background Pattern - Fallback approach */}
+        <div className="absolute inset-0 z-0 hero-bg" />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-blue-700/80" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-blue-900/10 via-blue-800/10 to-blue-700/10" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -231,15 +226,15 @@ export default function Home() {
               <OptimizedBackgroundImage
                 src="/images/visionimg.png"
                 alt="Our Mission - OvyeGroup Vision"
-                className="aspect-square rounded-2xl"
+                className="aspect-square rounded-2xl overflow-hidden"
                 quality={70}
                 sizes="(max-width: 768px) 100vw, 50vw"
               >
-                <div className="h-full w-full flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-6 rounded-2xl">
+                <div className="h-full w-full flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent p-6">
                   <h3 className="text-3xl font-bold mb-4 text-white">
                     Our Mission
                   </h3>
-                  <p className="text-blue-100 text-lg leading-relaxed">
+                  <p className="text-white text-lg leading-relaxed">
                     To create technologies that solve major problems and
                     accelerate the world&apos;s transition to a sustainable tech
                     system, while improving living conditions and increasing

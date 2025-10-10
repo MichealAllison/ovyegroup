@@ -18,6 +18,21 @@
   --ring: #1e40af;
 }
 
+/* Optimized Background Image Fallback */
+.bg-image-fallback {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hero background image */
+.hero-bg {
+  background-image: url("/images/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
