@@ -36,11 +36,10 @@ const Footer = () => {
 
   const socialMedia = [
     {
-      icon: Facebook,
-      href: "https://facebook.com/ovyegroup",
-      label: "Facebook",
+      icon: Twitter,
+      href: "https://x.com/oveyGroup?t=me7t4kZ2SIQbDH4tK0jRHQ&s=09",
+      label: "Twitter",
     },
-    { icon: Twitter, href: "https://twitter.com/ovyegroup", label: "Twitter" },
     {
       icon: Linkedin,
       href: "https://linkedin.com/company/ovyegroup",
