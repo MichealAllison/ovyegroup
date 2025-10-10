@@ -103,13 +103,13 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
               Innovating Industries
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
                 from Africa to the World
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
               We create solution-centric products that improve living conditions
               and increase economic profitability in Africa. Our mission is to
               create technologies that solve major problems and accelerate the
@@ -182,7 +182,7 @@ export default function Home() {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Solving Africa&apos;s Greatest Challenges
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base text-gray-600 mb-8 leading-relaxed">
                 We are keen on identifying prolonged problems existing in
                 emerging communities and providing corresponding solutions that
                 would solve those problems for everyone. Our focus is on
@@ -231,10 +231,10 @@ export default function Home() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               >
                 <div className="h-full w-full flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent p-6">
-                  <h3 className="text-3xl font-bold mb-4 text-white">
+                  <h3 className="text-4xl font-bold mb-4 text-white">
                     Our Mission
                   </h3>
-                  <p className="text-white text-lg leading-relaxed">
+                  <p className="text-white text-base leading-relaxed">
                     To create technologies that solve major problems and
                     accelerate the world&apos;s transition to a sustainable tech
                     system, while improving living conditions and increasing
@@ -254,7 +254,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Our Business Sectors
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               We operate across diverse industries, delivering innovative
               solutions and creating value for our stakeholders and communities.
             </p>
@@ -315,7 +315,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Our Core Values
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               These values guide every decision we make and every action we take
               as we build sustainable businesses across Africa.
             </p>
@@ -356,7 +356,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-white mb-6">
               Ready to Partner with Us?
             </h2>
-            <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
+            <p className="text-base text-blue-100 mb-12 max-w-3xl mx-auto">
               Join us in building a prosperous future for Africa. Explore
               partnership opportunities, career options, or learn more about our
               commitment to sustainability.
