@@ -4,16 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Building2,
-  Users,
-  Award,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,6 +38,10 @@ const Header = () => {
     {
       label: "Our Business",
       href: "/business",
+    },
+    {
+      label: "James Foundation",
+      href: "https://www.jamesemmanuelovye.foundation/",
     },
     {
       label: "News",
