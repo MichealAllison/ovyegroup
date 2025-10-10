@@ -82,6 +82,9 @@ const Header = () => {
                 width={200}
                 height={200}
                 className="scroll"
+                priority
+                quality={85}
+                sizes="(max-width: 768px) 150px, 200px"
               />
             </motion.div>
           </Link>

@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import OptimizedBackgroundImage from "@/components/ui/OptimizedBackgroundImage";
 
 export default function Home() {
   const stats = [
@@ -88,11 +89,18 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/images/bg.png')] bg-cover bg-center" />
-        </div>
+        <OptimizedBackgroundImage
+          src="/images/bg.png"
+          alt="OvyeGroup Background"
+          className="absolute inset-0"
+          priority
+          quality={60}
+          sizes="100vw"
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-blue-700/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -220,9 +228,17 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="aspect-square rounded-2xl inset-0 bg-[url('/images/visionimg.png')] bg-cover bg-center p-8 text-white">
+              <OptimizedBackgroundImage
+                src="/images/visionimg.png"
+                alt="Our Mission - OvyeGroup Vision"
+                className="aspect-square rounded-2xl"
+                quality={70}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              >
                 <div className="h-full w-full flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-6 rounded-2xl">
-                  <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
+                  <h3 className="text-3xl font-bold mb-4 text-white">
+                    Our Mission
+                  </h3>
                   <p className="text-blue-100 text-lg leading-relaxed">
                     To create technologies that solve major problems and
                     accelerate the world&apos;s transition to a sustainable tech
@@ -230,7 +246,7 @@ export default function Home() {
                     economic profitability in Africa.
                   </p>
                 </div>
-              </div>
+              </OptimizedBackgroundImage>
             </motion.div>
           </div>
         </div>
@@ -258,12 +274,13 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
               >
-                <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700">
-                  <div
-                    className="h-full w-full bg-cover bg-center"
-                    style={{ backgroundImage: `url(${sector.image})` }}
-                  ></div>
-                </div>
+                <OptimizedBackgroundImage
+                  src={sector.image}
+                  alt={`${sector.title} - OvyeGroup Business Sector`}
+                  className="h-48"
+                  quality={65}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {sector.title}

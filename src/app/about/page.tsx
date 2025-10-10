@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Target, Eye, Users, Award, Heart, Lightbulb } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import OptimizedBackgroundImage from "@/components/ui/OptimizedBackgroundImage";
 
 export default function AboutPage() {
   const milestones = [
@@ -77,11 +78,16 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="pt-20 bg-cover bg-center text-white"
-        style={{ backgroundImage: "url('/images/about2.png')" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section className="pt-20 text-white relative">
+        <OptimizedBackgroundImage
+          src="/images/about2.png"
+          alt="About OvyeGroup - Our Story"
+          className="absolute inset-0"
+          priority
+          quality={65}
+          sizes="100vw"
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
